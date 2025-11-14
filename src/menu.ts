@@ -1,17 +1,27 @@
 import readline from "readline-sync";
 
+
 let opcao = 0;
 
 let idProduto = ["Batom", "Base", "Rímel","iluminador"];
 let precoProduto = [20.00, 45.00, 30.00, 18.00];
 let carrinho: number[] = [];
 
+import { Cosmetico } from "./model/cosmetico";
 
-while (opcao !== 4) {
-  console.log("\n=== Beauty Store ===");
-  console.log("1 - Listar produtos");
+
+while (opcao !== 9) {
+  console.log("\n=== Beauty Store: Gerenciamento e Vendas ===");
+  console.log("1- Cadastrar Novo Produto")
+  console.log("2- Listar Produtos")
+  console.log("3- Buscar produto por ID")
+  console.log("4- Atualizar Produto")
+  console.log("5- Deletar Produto")
+  console.log("============================================")
+  console.log("6- Comprar Produto")
+  console.log("7- Visualizar Carrinho e Pagar")
+  console.log("8- Outro")
   console.log("2 - Comprar produto");
-  console.log("3 - Visualizar Carrinho e Pagar "); 
   console.log("4 - Sair");                         
   
   opcao = Number(readline.question("Escolha uma opção: "));
@@ -44,7 +54,7 @@ while (opcao !== 4) {
 
     case 3: 
       if(carrinho.length === 0){
-        console.log("\n🛒 Carrinho vazio! Adicione produtos na Opção 2.");
+        console.log("\n Carrinho vazio! Adicione produtos na Opção 2.");
       } else {
         let totalCompra: number = 0;
 
