@@ -7,7 +7,7 @@ let idProduto = ["Batom", "Base", "Rímel","iluminador"];
 let precoProduto = [20.00, 45.00, 30.00, 18.00];
 let carrinho: number[] = [];
 
-import { Cosmetico } from "./model/cosmetico";
+import { Cosmetico } from "../model/cosmetico";
 
 
 while (opcao !== 9) {
