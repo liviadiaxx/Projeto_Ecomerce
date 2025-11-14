@@ -20,7 +20,8 @@ while (opcao !== 4) {
     case 1:
       console.log("\n--- Catálogo de Produtos ---");
       for(let i = 0; i < idProduto.length; i++) {
-        console.log(`${i + 1} - ${idProduto[i]} - R$ ${precoProduto[i].toFixed(2)}`);
+        
+      console.log(`${i + 1} - ${idProduto[i]!} - R$ ${precoProduto[i]!.toFixed(2)}`);
       }
       console.log("--------------------");
       break;
@@ -28,21 +29,20 @@ while (opcao !== 4) {
     case 2:
       console.log("\n--- Comprar Produto ---");
       
-      // Ajuste de sintaxe: Garantir que a variável 'produtoEscolhido' seja do tipo 'number'
+      
       let produtoEscolhido: number = Number(readline.question("Digite o número do produto que deseja comprar: ")) -1;
       
-      // Laço Condicional (IF/ELSE)
+     
       if(produtoEscolhido >= 0 && produtoEscolhido < idProduto.length){
         console.log(`Adicionando ${idProduto[produtoEscolhido]} ao carrinho.`);
         carrinho.push(produtoEscolhido);
       } else {
-        // Raciocínio corrigido para ID Inválido
+       
         console.log("Código de produto inválido. Por favor, escolha um número da lista.");
       }
       break;
 
-    case 3: // NOVO CASE 3: VISUALIZAR CARRINHO
-      // Laço Condicional (IF/ELSE) para checar se está vazio
+    case 3: 
       if(carrinho.length === 0){
         console.log("\n🛒 Carrinho vazio! Adicione produtos na Opção 2.");
       } else {
@@ -50,17 +50,16 @@ while (opcao !== 4) {
 
         console.log("\n--- Seu Carrinho ---");
 
-        // Laço de Repetição (FOR) para somar e exibir os itens
+        
         for(let i = 0; i < carrinho.length; i++){
-          let codigo: number = carrinho[i];
+          let codigo: number = carrinho[i]!;
 
-          // Asserção '!' para acalmar o TypeScript (raciocínio que discutimos)
           const nomeProduto = idProduto[codigo]!;
           const precoItem = precoProduto[codigo]!;
 
           totalCompra += precoItem;
 
-          // O operador '?' no toFixed() não é necessário aqui
+          
           console.log(`- ${nomeProduto} (R$ ${precoItem.toFixed(2)})`);
         }
         
@@ -70,7 +69,7 @@ while (opcao !== 4) {
       }
       break;
 
-    case 4: // NOVO CASE 4: SAIR (FINALIZA O LAÇO WHILE)
+    case 4: 
       console.log("Obrigada por garantir sua beleza com a Beauty Store! Até logo..");
       break;
 
