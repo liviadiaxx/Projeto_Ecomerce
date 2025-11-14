@@ -22,7 +22,7 @@ export abstract class Cosmetico {
 
     
     public set preco(preco: number) { this._preco = preco; }
-
+    public set marca(marca: string) { this._marca = marca; }
     
     public abstract visualizar(): void; 
 }
